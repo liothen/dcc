@@ -1,4 +1,4 @@
-dcc
+DCC
 ===
 
-Darkscience Code Contest
+Darkscience Code Contest http://www.darkscience.net/wiki/dcc/
