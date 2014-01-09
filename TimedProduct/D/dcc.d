@@ -14,11 +14,11 @@ void main() {
     auto post         = post("directus.darkscience.net:6789", postme, client);
     
     // Verify Correctness
-    auto post_result = "";
+    auto post_result  = "";
     if (matchAll(post, r"\bCorrect\b")) {
-    	post_result = "Correct!";
+    	post_result   = "Correct!";
     } else {
-    	post_result = "Wrong!";
+    	post_result   = "Wrong!";
     }
 
 	// Print Results
