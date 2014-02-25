@@ -7,22 +7,10 @@ use std::os;
 use std::str;
 use std::int;
 use std::from_str;
+use core::from_str::FromStr::from_str;
 mod charclass;
 mod parse;
 
-
-// fn main() {
-//     format!("{}", Get);
-//     let args = os::args();
-//     match args.len() {
-//         0 => unreachable!(),
-//         2 => make_and_print_request(args[1]),
-//         _ => {
-//             println!("Usage: {} URL", args[0]);
-//             return;
-//         },
-//     };
-// }
 
 fn main() {
     let url = "http://directus.darkscience.net:6789/";
@@ -36,9 +24,13 @@ fn main() {
     let mut body = response.read_to_end();
     let content = str::from_utf8(body);
     let v: ~[&str] = content.words().collect();
+    // let xx = v.map(|x| if *x > max { max = *x });
+    let v1 = from_str::<int>(v[11]).get();
+    let v2 = from_str::<int>(v[13]).get();
     // let a = v[11];
     // let a1: int = from_str(a);
     // let answer = int::from_str(v[11]) * int::from_str(v[13]); 
-    println(v[11]);
+    println(v1);
+    println(v2);
     println(content);   
 }
